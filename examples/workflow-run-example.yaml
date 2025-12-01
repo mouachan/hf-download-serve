@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: deploy-model-
+  namespace: gpt-oss-20b-demo
+spec:
+  workflowTemplateRef:
+    name: huggingface-model-deployment
+  arguments:
+    parameters:
+      - name: huggingface-token
+        value: "YOUR_HUGGINGFACE_TOKEN_HERE"
+      - name: huggingface-model-url
+        value: "RedHatAI/gpt-oss-20b"
+      - name: pvc-name
+        value: "pvc-gpt-oss"
+      - name: storage-size
+        value: "50Gi"
+      - name: model-namespace
+        value: "gpt-oss-20b-demo"
+      - name: model-display-name
+        value: "gpt-oss-20b"
+      - name: model-path
+        value: "/mnt/models"
+      - name: tensor-parallel-size
+        value: "1"
+      - name: gpu-memory-utilization
+        value: "0.9"
+      - name: model-max-length
+        value: "2048"
+      - name: cpu-limit
+        value: "8"
+      - name: cpu-request
+        value: "4"
+      - name: memory-limit
+        value: "32Gi"
+      - name: memory-request
+        value: "16Gi"
+      - name: gpu-count
+        value: "1"
+      - name: gpu-type
+        value: "nvidia-a10g"
+      - name: api-port
+        value: "8080"
+      - name: git-repo
+        value: "https://github.com/YOUR_USERNAME/hf-download-serve.git"
+      - name: git-revision
+        value: "main"
