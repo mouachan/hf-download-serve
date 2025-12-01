@@ -51,6 +51,6 @@ spec:
       - name: node-selector-zone
         value: "eu-central-1a"
       - name: git-repo
-        value: "https://github.com/YOUR_USERNAME/hf-download-serve.git"
+        value: "https://github.com/mouachan/hf-download-serve.git"
       - name: git-revision
         value: "main"
