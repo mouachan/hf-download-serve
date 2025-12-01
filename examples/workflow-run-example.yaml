@@ -16,6 +16,8 @@ spec:
         value: "pvc-gpt-oss"
       - name: storage-size
         value: "50Gi"
+      - name: storage-class
+        value: "gp3-csi"
       - name: model-namespace
         value: "gpt-oss-20b-demo"
       - name: model-display-name
