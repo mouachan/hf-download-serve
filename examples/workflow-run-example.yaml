@@ -40,10 +40,16 @@ spec:
         value: "16Gi"
       - name: gpu-count
         value: "1"
-      - name: gpu-type
-        value: "nvidia-a10g"
       - name: api-port
         value: "8080"
+      - name: vllm-image
+        value: "registry.redhat.io/rhaiis/vllm-cuda-rhel9@sha256:ad756c01ec99a99cc7d93401c41b8d92ca96fb1ab7c5262919d818f2be4f3768"
+      - name: recommended-accelerators
+        value: '["nvidia.com/gpu"]'
+      - name: toleration-value
+        value: "NVIDIA-L40-PRIVATE"
+      - name: node-selector-zone
+        value: "eu-central-1a"
       - name: git-repo
         value: "https://github.com/YOUR_USERNAME/hf-download-serve.git"
       - name: git-revision
